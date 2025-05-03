@@ -26,5 +26,25 @@ class MovementComponent extends Component {
     }
 }
 
+class SpriteComponent extends Component {
+    constructor(componentType,componentObj){
+        super(componentType)
+        this.sprite = new Image()
+        this.sprite.src = componentObj.path
+        this.srcRect = componentObj.srcRect
+    }
+}
 
-export {PositionComponent,MovementComponent}
+
+class AnimationComponent extends Component {
+    constructor(componentType,componentObj){
+        super(componentType)
+        this.frames = componentObj.frames
+        this.currentTimeOfAnimation = componentObj.currentTimeOfAnimation
+        this.facing = componentObj.facing
+        this.shouldAnimate = componentObj.shouldAnimate
+
+    }
+}
+
+export {PositionComponent,MovementComponent,SpriteComponent,AnimationComponent}
